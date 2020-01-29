@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f15bd8df-6481-4a62-9f8a-a88c85420a31" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1X0ntW3y6B6ruWcvHYaEE54BEcl" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Groovy JUnit" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="groovy.util.GroovyTestCase" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="show.unlinked.gradle.project.popup" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="cash.register" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="groovy.util.GroovyTestCase" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="cash.register" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.CashRegisterTest">
+    <configuration name="CashRegister" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cash.register.CashRegister" />
+      <module name="cash-register.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cash.register.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CashRegisterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cash-register.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cash.register.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cash.register" />
+      <option name="MAIN_CLASS_NAME" value="cash.register.CashRegisterTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CashRegisterTest.performChangeActionShouldMakeCorrectChange" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cash-register.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cash.register.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cash.register" />
+      <option name="MAIN_CLASS_NAME" value="cash.register.CashRegisterTest" />
+      <option name="METHOD_NAME" value="performChangeActionShouldMakeCorrectChange" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CashRegisterTest.performPutActionShouldAddAmountsToRegister" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cash-register.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cash.register.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cash.register" />
+      <option name="MAIN_CLASS_NAME" value="cash.register.CashRegisterTest" />
+      <option name="METHOD_NAME" value="performPutActionShouldAddAmountsToRegister" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CashRegisterTest.performTakeActionShouldDeductAmountsFromRegister" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cash-register.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cash.register.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cash.register" />
+      <option name="MAIN_CLASS_NAME" value="cash.register.CashRegisterTest" />
+      <option name="METHOD_NAME" value="performTakeActionShouldDeductAmountsFromRegister" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CashRegisterTest" />
+        <item itemvalue="Application.CashRegister" />
+        <item itemvalue="JUnit.CashRegisterTest.performChangeActionShouldMakeCorrectChange" />
+        <item itemvalue="JUnit.CashRegisterTest.performTakeActionShouldDeductAmountsFromRegister" />
+        <item itemvalue="JUnit.CashRegisterTest.performPutActionShouldAddAmountsToRegister" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f15bd8df-6481-4a62-9f8a-a88c85420a31" name="Default Changelist" comment="" />
+      <created>1580192094441</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1580192094441</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="402" y="23" width="636" height="839" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1580192192387">
+      <screen x="0" y="23" width="1440" height="839" />
+    </state>
+    <state x="402" y="23" width="636" height="839" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.839@0.23.1440.839" timestamp="1580192192387" />
+    <state width="1398" height="202" key="GridCell.Tab.0.bottom" timestamp="1580284951089">
+      <screen x="0" y="23" width="1440" height="839" />
+    </state>
+    <state width="1398" height="202" key="GridCell.Tab.0.bottom/0.23.1440.839@0.23.1440.839" timestamp="1580284951089" />
+    <state width="1398" height="202" key="GridCell.Tab.0.center" timestamp="1580284951088">
+      <screen x="0" y="23" width="1440" height="839" />
+    </state>
+    <state width="1398" height="202" key="GridCell.Tab.0.center/0.23.1440.839@0.23.1440.839" timestamp="1580284951088" />
+    <state width="1398" height="202" key="GridCell.Tab.0.left" timestamp="1580284951088">
+      <screen x="0" y="23" width="1440" height="839" />
+    </state>
+    <state width="1398" height="202" key="GridCell.Tab.0.left/0.23.1440.839@0.23.1440.839" timestamp="1580284951088" />
+    <state width="1398" height="202" key="GridCell.Tab.0.right" timestamp="1580284951088">
+      <screen x="0" y="23" width="1440" height="839" />
+    </state>
+    <state width="1398" height="202" key="GridCell.Tab.0.right/0.23.1440.839@0.23.1440.839" timestamp="1580284951088" />
+    <state width="1398" height="270" key="GridCell.Tab.1.bottom" timestamp="1580284773505">
+      <screen x="0" y="23" width="1440" height="839" />
+    </state>
+    <state width="1398" height="270" key="GridCell.Tab.1.bottom/0.23.1440.839@0.23.1440.839" timestamp="1580284773505" />
+    <state width="1398" height="270" key="GridCell.Tab.1.center" timestamp="1580284773505">
+      <screen x="0" y="23" width="1440" height="839" />
+    </state>
+    <state width="1398" height="270" key="GridCell.Tab.1.center/0.23.1440.839@0.23.1440.839" timestamp="1580284773505" />
+    <state width="1398" height="270" key="GridCell.Tab.1.left" timestamp="1580284773504">
+      <screen x="0" y="23" width="1440" height="839" />
+    </state>
+    <state width="1398" height="270" key="GridCell.Tab.1.left/0.23.1440.839@0.23.1440.839" timestamp="1580284773504" />
+    <state width="1398" height="270" key="GridCell.Tab.1.right" timestamp="1580284773505">
+      <screen x="0" y="23" width="1440" height="839" />
+    </state>
+    <state width="1398" height="270" key="GridCell.Tab.1.right/0.23.1440.839@0.23.1440.839" timestamp="1580284773505" />
+    <state x="376" y="277" key="com.intellij.ide.util.TipDialog" timestamp="1580271666146">
+      <screen x="0" y="23" width="1440" height="839" />
+    </state>
+    <state x="376" y="277" key="com.intellij.ide.util.TipDialog/0.23.1440.839@0.23.1440.839" timestamp="1580271666146" />
+    <state x="484" y="179" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1580192250781">
+      <screen x="0" y="23" width="1440" height="839" />
+    </state>
+    <state x="484" y="179" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.23.1440.839@0.23.1440.839" timestamp="1580192250781" />
+    <state x="385" y="186" width="670" height="676" key="search.everywhere.popup" timestamp="1580273037799">
+      <screen x="0" y="23" width="1440" height="839" />
+    </state>
+    <state x="385" y="186" width="670" height="676" key="search.everywhere.popup/0.23.1440.839@0.23.1440.839" timestamp="1580273037799" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/cash/register/CashRegister.java</url>
+          <line>172</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
