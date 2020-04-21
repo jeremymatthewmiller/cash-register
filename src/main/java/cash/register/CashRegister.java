@@ -3,9 +3,13 @@
  */
 package cash.register;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class CashRegister {
 
@@ -36,7 +40,7 @@ public class CashRegister {
         do {
             System.out.println("Please enter a command, or \"quit\"");
             command = scanner.nextLine().toLowerCase();
-        } while (isCommandValid(command));
+        } while (!isCommandValid(command));
 
         return command;
     }
@@ -67,6 +71,8 @@ public class CashRegister {
             isValid = isChangeCommandValid(commands);
             break;
         case QUIT:
+            isValid = true;
+            break;
         default:
             isValid = false;
             break;
@@ -197,22 +203,57 @@ public class CashRegister {
 
     void performChangeAction(final String[] commands, Map<Currency, Integer> register) {
         int amount = Integer.parseInt(commands[1]);
+        List<Integer> resultContainer = new ArrayList<>();
 
-        for (Currency currency : Currency.values()) {
-            while (register.get(currency) > 0 && amount > 0) {
-                if (amount - currency.value >= 0) {
-                    deductFromRegister(currency.value, currency, register);
-                } else {
-                    break;
+        int[] registerContents = convertCashRegisterToArray(register);
+        sumCurrencyInRegister(registerContents, 0, registerContents.length - 1, 0, "", resultContainer, amount);
+
+        if (!resultContainer.isEmpty()) {
+            //We are able to make change. Deduct the values in the resultContainer list from the register
+            for (Integer i : resultContainer) {
+                deductFromRegister(1, Currency.fromInt(i.intValue()), register);
+            }
+            performShowAction(register);
+        } else {
+            System.out.println("sorry");
+        }
+    }
+
+    int[] convertCashRegisterToArray(final Map<Currency, Integer> register) {
+        List<Integer> registerValues = new ArrayList<>();
+
+        register.forEach((key, value) -> {
+            for (int i = 0; i < value.intValue(); i++) {
+                registerValues.add(Integer.valueOf(key.value));
+            }
+        });
+
+        return registerValues.stream().mapToInt(Integer::intValue).toArray();
+    }
+
+    void sumCurrencyInRegister(int[] registerContents, int left, int right, int sum, String display, List<Integer> results, int targetValue) {
+
+        if (left > right) {
+            //System.out.print("summation: [" + display + "] = " + sum + "\n");
+            if (sum == targetValue) {
+                Pattern pattern = Pattern.compile(" ");
+                List<Integer> latestResults = pattern.splitAsStream(display.trim())
+                        .map(Integer::valueOf)
+                        .collect(Collectors.toList());
+
+                if (results.isEmpty() || latestResults.size() < results.size()) {
+                    results.clear();
+                    results.addAll(latestResults);
                 }
             }
+            return;
         }
 
-        if (amount != 0) {
-            System.out.println("sorry");
-        } else {
-            performShowAction(register);
-        }
+        // Subset including registerContents[left]
+        sumCurrencyInRegister(registerContents, left + 1, right,sum + registerContents[left], display + " " + registerContents[left], results, targetValue);
+
+        // Subset excluding registerContents[left]
+        sumCurrencyInRegister(registerContents, left + 1, right, sum, display, results, targetValue);
     }
 
     Map<Currency, Integer> initializeRegister() {

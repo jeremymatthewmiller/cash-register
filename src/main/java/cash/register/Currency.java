@@ -12,4 +12,13 @@ public enum Currency {
   Currency(int value) {
     this.value = value;
   }
+
+  public static Currency fromInt(final int value) {
+    for (Currency c : Currency.values()) {
+      if (c.value == value) {
+        return c;
+      }
+    }
+    return null;
+  }
 }

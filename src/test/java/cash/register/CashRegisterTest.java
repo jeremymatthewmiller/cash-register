@@ -7,6 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.HashMap;
 import java.util.Map;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.NullSource;
@@ -41,8 +42,6 @@ public class CashRegisterTest {
         assertThat(result).isTrue();
     }
 
-    //@ParameterizedTest
-    //@MethodSource("invalidChangeCommandProvider")
     @Test
     void isChangeCommandValidShouldReturnFalseForInvalidCommand() {
         String[] changeCommand = {"change", "1", "2"};
@@ -55,13 +54,6 @@ public class CashRegisterTest {
 
         assertThat(result2).isFalse();
     }
-
-/*    private static Stream<Arguments> invalidChangeCommandProvider() {
-        return Stream.of(
-            Arguments.of(new String[] {"change"}),
-            Arguments.of(new String[] {"change", "1", "2"})
-        );
-    }*/
 
     @Test
     void isPutCommandValidShouldReturnTrueForValidCommand() {
@@ -199,7 +191,7 @@ public class CashRegisterTest {
     }
 
     @Test
-    void performChangeActionShouldMakeCorrectChange() {
+    void performChangeActionShouldMakeCorrectChangeAndDeductTheResultFromTheRegister() {
         String[] changeCommand = {"change", "11"};
         Map<Currency, Integer> register = new HashMap<>();
         register.put(Currency.TWENTY, Integer.valueOf(1));
@@ -210,10 +202,29 @@ public class CashRegisterTest {
 
         cashRegister.performChangeAction(changeCommand, register);
 
-        assertThat(register.get(Currency.TWENTY)).isEqualTo(Integer.valueOf(0));
+        assertThat(register.get(Currency.TWENTY)).isEqualTo(Integer.valueOf(1));
         assertThat(register.get(Currency.TEN)).isEqualTo(Integer.valueOf(0));
-        assertThat(register.get(Currency.FIVE)).isEqualTo(Integer.valueOf(1));
-        assertThat(register.get(Currency.TWO)).isEqualTo(Integer.valueOf(3));
+        assertThat(register.get(Currency.FIVE)).isEqualTo(Integer.valueOf(2));
+        assertThat(register.get(Currency.TWO)).isEqualTo(Integer.valueOf(1));
+        assertThat(register.get(Currency.ONE)).isEqualTo(Integer.valueOf(0));
+    }
+
+    @Test
+    void performChangeActionShouldNotRemoveAnyBillsFromTheRegisterWhenChangeCannotBeMade() {
+        String[] changeCommand = {"change", "99"};
+        Map<Currency, Integer> register = new HashMap<>();
+        register.put(Currency.TWENTY, Integer.valueOf(1));
+        register.put(Currency.TEN, Integer.valueOf(0));
+        register.put(Currency.FIVE, Integer.valueOf(3));
+        register.put(Currency.TWO, Integer.valueOf(4));
+        register.put(Currency.ONE, Integer.valueOf(0));
+
+        cashRegister.performChangeAction(changeCommand, register);
+
+        assertThat(register.get(Currency.TWENTY)).isEqualTo(Integer.valueOf(1));
+        assertThat(register.get(Currency.TEN)).isEqualTo(Integer.valueOf(0));
+        assertThat(register.get(Currency.FIVE)).isEqualTo(Integer.valueOf(3));
+        assertThat(register.get(Currency.TWO)).isEqualTo(Integer.valueOf(4));
         assertThat(register.get(Currency.ONE)).isEqualTo(Integer.valueOf(0));
     }
 
@@ -226,5 +237,28 @@ public class CashRegisterTest {
         assertThat(result.get(Currency.FIVE)).isEqualTo(Integer.valueOf(0));
         assertThat(result.get(Currency.TWO)).isEqualTo(Integer.valueOf(0));
         assertThat(result.get(Currency.ONE)).isEqualTo(Integer.valueOf(0));
+    }
+
+    @Test
+    void convertCashRegisterMapToArrayShouldTakeValuesFromRegisterMapAndPlaceThemIntoList() {
+        Map<Currency, Integer> register = createRegister();
+
+        final int[] result = cashRegister.convertCashRegisterToArray(register);
+
+        assertThat(result).containsExactlyInAnyOrder(1,1,1,1,1,2,2,2,2,5,5,5,10,10,20);
+    }
+
+    @Test
+    void convertCashRegisterMapToArrayShouldTakeValuesFromRegisterMapAndPlaceThemIntoList2() {
+        Map<Currency, Integer> register = new HashMap<>();
+        register.put(Currency.TWENTY, Integer.valueOf(1));
+        register.put(Currency.TEN, Integer.valueOf(0));
+        register.put(Currency.FIVE, Integer.valueOf(3));
+        register.put(Currency.TWO, Integer.valueOf(4));
+        register.put(Currency.ONE, Integer.valueOf(0));
+
+        final int[] result = cashRegister.convertCashRegisterToArray(register);
+
+        assertThat(result).containsExactlyInAnyOrder(2,2,2,2,5,5,5,20);
     }
 }
